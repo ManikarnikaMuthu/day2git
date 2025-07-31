@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Version Control with Git</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .step {
+      background: #fff;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 10px;
+      width: 60%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .command {
+      font-family: monospace;
+      background: #222;
+      color: #0f0;
+      padding: 5px 10px;
+      display: inline-block;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌱 Git Version Control Workflow</h1>
+
+  <div class="step">
+    <h2>1️⃣ Clone Repository</h2>
+    <p>Download project from GitHub.</p>
+    <div class="command">git clone &lt;repo_url&gt;</div>
+  </div>
+
+  <div class="step">
+    <h2>2️⃣ Check Status</h2>
+    <p>See which files are tracked/untracked.</p>
+    <div class="command">git status</div>
+  </div>
+
+  <div class="step">
+    <h2>3️⃣ Create a New Branch</h2>
+    <p>Work safely without affecting the main code.</p>
+    <div class="command">git checkout -b feature_branch</div>
+  </div>
+
+  <div class="step">
+    <h2>4️⃣ Add & Commit Changes</h2>
+    <p>Save your progress locally.</p>
+    <div class="command">git add filename</div><br>
+    <div class="command">git commit -m "Your message"</div>
+  </div>
+
+  <div class="step">
+    <h2>5️⃣ Push to GitHub</h2>
+    <p>Upload your branch to the remote repository.</p>
+    <div class="command">git push origin feature_branch</div>
+  </div>
+
+  <div class="step">
+    <h2>✅ Done!</h2>
+    <p>Now your code is version-controlled and backed up on GitHub.</p>
+  </div>
+</body>
+</html>
