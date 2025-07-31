@@ -1,75 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Version Control with Git Changed Versiongit </title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    .step {
-      background: #fff;
-      margin: 20px auto;
-      padding: 15px;
-      border-radius: 10px;
-      width: 60%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .command {
-      font-family: monospace;
-      background: #222;
-      color: #0f0;
-      padding: 5px 10px;
-      display: inline-block;
-      margin-top: 10px;
-      border-radius: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roast Central: You're in Trouble!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+        .bounce { animation: bounce 0.5s infinite; }
+        .wiggle { animation: wiggle 0.3s infinite; }
+        .gradient-text {
+            background: linear-gradient(90deg, #ff4d4d, #ffbb00, #ff4d4d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-<body>
-  <h1>🌱 Git Version Control Workflow</h1>
+<body class="bg-gray-900 min-h-screen flex flex-col items-center justify-center text-white font-sans">
+    <div class="text-center p-6 max-w-lg">
+        <h1 class="text-5xl font-extrabold gradient-text mb-4">🔥 Roast Central 🔥</h1>
+        <h2 class="text-2xl font-bold mb-6">Dedicated to Manikarnika!</h2>
+        <div id="roastDisplay" class="text-xl bg-red-800 rounded-lg p-4 mb-6 shadow-lg border-2 border-yellow-400"></div>
+        <button id="roastBtn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 bounce">Get Another Roast!</button>
+        <p class="mt-6 text-sm italic">Careful, these burns are hotter than your cooking! 😜</p>
+    </div>
 
-  <div class="step">
-    <h2>1️⃣ Clone Repository</h2>
-    <p>Download project from GitHub.</p>
-    <div class="command">git clone &lt;repo_url&gt;</div>
-  </div>
+    <script>
+        const roasts = [
+            "Is your name Wi-Fi? Because you’re dropping signals everywhere!",
+            "Your selfies are so filtered, even NASA can’t find the real you!",
+            "You’re so slow at texting back, I bet snails have better response times!",
+            "Your fashion sense is so wild, it’s like a thrift store exploded!",
+            "I’d say you’re one of a kind, but the universe said, ‘One’s enough!’",
+            "Your playlists are so bad, even Spotify skips them!",
+            "You’re so extra, you make glitter look subtle!",
+            "Your cooking’s so bad, Gordon Ramsay would retire in tears!",
+            "You’re so clumsy, you could trip over a Wi-Fi signal!",
+            "Your jokes are so dry, they make the Sahara look like an oasis!"
+        ];
 
-  <div class="step">
-    <h2>2️⃣ Check Status</h2>
-    <p>See which files are tracked/untracked.</p>
-    <div class="command">git status</div>
-  </div>
+        function getRandomRoast() {
+            const randomIndex = Math.floor(Math.random() * roasts.length);
+            return roasts[randomIndex];
+        }
 
-  <div class="step">
-    <h2>3️⃣ Create a New Branch</h2>
-    <p>Work safely without affecting the main code.</p>
-    <div class="command">git checkout -b feature_branch</div>
-  </div>
+        const roastDisplay = document.getElementById('roastDisplay');
+        const roastBtn = document.getElementById('roastBtn');
 
-  <div class="step">
-    <h2>4️⃣ Add & Commit Changes</h2>
-    <p>Save your progress locally.</p>
-    <div class="command">git add filename</div><br>
-    <div class="command">git commit -m "Your message"</div>
-  </div>
+        roastDisplay.textContent = getRandomRoast();
 
-  <div class="step">
-    <h2>5️⃣ Push to GitHub</h2>
-    <p>Upload your branch to the remote repository.</p>
-    <div class="command">git push origin feature_branch</div>
-  </div>
-
-  <div class="step">
-    <h2>✅ Done!</h2>
-    <p>Now your code is version-controlled and backed up on GitHub.</p>
-  </div>
+        roastBtn.addEventListener('click', () => {
+            roastDisplay.textContent = getRandomRoast();
+            roastDisplay.classList.add('wiggle');
+            setTimeout(() => roastDisplay.classList.remove('wiggle'), 300);
+        });
+    </script>
 </body>
 </html>
